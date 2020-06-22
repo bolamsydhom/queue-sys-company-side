@@ -1,0 +1,89 @@
+
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@import '~@angular/material/theming';
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat-core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+// $queue-system-frontEnd-primary: mat-palette($mat-indigo);
+// $queue-system-frontEnd-accent: mat-palette($mat-pink, A200, A100, A400);
+
+$queue-system-frontEnd-primary: mat-palette($mat-teal, 900 ,A700);
+$queue-system-frontEnd-accent: mat-palette($mat-grey, 300);
+
+// The warn palette is optional (defaults to red).
+$queue-system-frontEnd-warn: mat-palette($mat-red,A400);
+
+// Create the theme object (a Sass map containing all of the palettes).
+$queue-system-frontEnd-theme: mat-light-theme($queue-system-frontEnd-primary, $queue-system-frontEnd-accent, $queue-system-frontEnd-warn);
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include angular-material-theme($queue-system-frontEnd-theme);
+
+/* You can add global styles to this file, and also import other style files */
+
+@font-face {
+    font-family: 'jf_flatregular';
+    src: url('./assets/webfontkit-20200520-182427/jf_flat_regular-webfont.woff2') format('woff2'),
+         url('./assets/webfontkit-20200520-182427/jf_flat_regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'jf_flatlight';
+    src: url('./assets/webfontkit-20200520-182427/jf-flat-light-webfont.woff2') format('woff2'),
+         url('./assets/webfontkit-20200520-182427/jf-flat-light-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'jf_flatmedium';
+    src: url('./assets/webfontkit-20200520-182427/jf-flat-medium-webfont.woff2') format('woff2'),
+         url('./assets/webfontkit-20200520-182427/jf-flat-medium-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+$custom-typography: mat-typography-config(
+  $font-family: 'jf_flatregular',
+  $headline: mat-typography-level(32px, 48px, 700),
+  $body-1: mat-typography-level(16px, 22px, 500),
+  $body-2: mat-typography-level(18px, 24px, 500)
+);
+
+
+// Override typography CSS classes (e.g., mat-h1, mat-display-1, mat-typography, etc.).
+@include mat-base-typography($custom-typography);
+
+// Override typography for a specific Angular Material components.
+@include mat-checkbox-typography($custom-typography);
+
+// Override typography for all Angular Material, including mat-base-typography and all components.
+@include angular-material-typography($custom-typography);
+
+
+@include mat-core($custom-typography);
+
+
+html, body { height: 100%; }
+// body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body { margin: 0;font-family: 'jf_flatregular', Arial, sans-serif ;
+font-weight:normal;
+font-style:normal;
+}
+
+@import "../node_modules/bootstrap/dist/css/bootstrap.min.css";

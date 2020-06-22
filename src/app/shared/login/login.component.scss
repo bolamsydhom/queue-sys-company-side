@@ -1,0 +1,178 @@
+$teal:#173E43;
+$grey:#DDDFD4;
+$baby-blue:#3FB0AC;
+
+.upper-bk{
+    .first-layer{
+        position: fixed;
+        z-index: 1;
+        top: -66px;
+        right: 57px;
+        background-image: url('../../../../src/assets/ticket/firstlayer.png');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 272px;
+        width: 689px;
+      
+    }
+
+    .second-layer{
+        position: fixed;
+        z-index: 2;
+        //left: 58%;
+        top: -40px;
+        //right: 67px;
+        right: 12px;
+        // background-color: rebeccapurple;
+        background-image: url('../../../../src/assets/ticket/secondlayer.png');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 232px;
+        width: 645px;
+
+    }
+    .third-layer{
+        position: fixed;
+        z-index: 3;
+        //right: -2%;
+        right: -7%;
+        top: -57px;
+        background-image: url('../../../../src/assets/ticket/thirdlayer.png');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 290px;
+        width: 695px;
+    }
+}
+
+
+.lower-bk{
+    position: fixed;
+    top: 35%;
+    left: -27%;
+    background-image: url('../../../../src/assets/employee-images/circle.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 55%;
+    height: 120%;
+}
+.login{
+    display: flex;
+    flex-direction: column;
+    top: 25%;
+    //justify-content: center;
+    align-items: center;
+    position: fixed;
+    z-index: 5;
+    //background-color: salmon;
+    width: 100%;
+    height: 100%;
+    
+    &__area{
+        // background-color: silver;
+        display: flex;
+        flex-direction: column;
+        //justify-content: center;
+        align-items: center;
+
+        &__logo{
+            background-image: url("../../../../src/assets/ticket/logo.png");
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            width: 9.5rem;
+            height: 6.5rem;
+        }
+        
+        width: 30%;
+        height: 70%;
+       
+        &__form{
+            margin-top: 20%;
+            width: 100%;
+            &__title{
+                margin-bottom: 5%;
+                color:  $teal;
+                font-weight: bold;
+                font-size: 25px;
+            }
+        }
+     
+    }
+    .submit-btn{
+        cursor: pointer;
+        border: none;
+        background-color: transparent;
+        display: inline-block;
+        background-image: url("../../../../src/assets/ticket/emptyarrow.png");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 37px;
+        height: 40px;
+        margin-left: 5%;
+    }
+    .final-btn{
+        cursor: pointer;
+        border: none;
+        background-color: transparent;
+        display: inline-block;
+        background-image: url("../../../../src/assets/ticket/finalarrow.png");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 37px;
+        height: 40px;
+        margin-left: 5%;
+    }
+    .submit-btn-error{
+        border: none;
+        background-color: transparent;
+        display: inline-block;
+        background-image: url("../../../../src/assets/ticket/redarrow.png");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 37px;
+        height: 40px;
+        margin-left: 5%;
+    }
+   .submit-btn, .final-btn, .submit-btn  :focus{
+    outline: 0;
+   }
+
+   .btn-container :focus{
+    outline: 0;
+   }
+}
+.matError{
+    font-size: 13px;
+    margin-top: -18px;
+}
+.full-width{
+    width: 80%;
+}
+.m-r{
+    margin-right: 5%;
+}
+.route-section{
+    margin-top: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &__title{
+        color:$baby-blue;
+        font-size: 12px;
+    }
+    &__route{
+        cursor: pointer;
+        font-size: 15px;
+        color: $teal;
+        font-weight: bold;
+        margin-left: 5px;
+    }
+}

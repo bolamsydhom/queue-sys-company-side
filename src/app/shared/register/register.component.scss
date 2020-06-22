@@ -1,0 +1,149 @@
+$teal:#173E43;
+$grey:#DDDFD4;
+$baby-blue:#3FB0AC;
+
+.background{
+    position: fixed;
+    top:40%;
+    left: 70%;
+    background-image: url("../../../../src/assets/images/reg-bk.png");
+    width: 60%;
+    height: 130%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.section{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+   
+    .body{
+        position:fixed;
+        display: flex;
+        flex-direction: column;
+        // justify-content: center;
+        align-items: center;
+        top: 0;
+        left: auto;
+        right: auto;
+        width: 60%;
+        height: 95%;
+        //background-color:lightgoldenrodyellow;
+    
+    
+        &__logo{
+        position: relative;
+        top:2%;
+        background-image: url("../../../../src/assets/ticket/logo.png");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 9.5rem;
+        height: 6.5rem;
+        }
+    
+        &__form{
+            //background-color: lightgrey;
+            margin-top: 3%;
+            width: 80%;
+    
+            &__title{
+                margin-bottom: 5%;
+                color:  $teal;
+                font-weight: bold;
+                font-size: 25px;
+            }
+            .eg-logo{
+                display: inline-block;
+                background-image: url("../../../../src/assets/ticket/eglogo.png");
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+                width: 1.6rem;
+                height: 1.6rem;
+                margin-right: 5px;
+                margin-bottom: -7px;
+            }
+            .eg-postalcode{
+                width: 1.5rem;
+                height: 1.5rem;
+                padding:  2px;
+               background-color: $teal ;
+               color: $grey;
+               margin-right: 5px;
+            }
+            .route-section{
+                margin-top: 4%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                &__title{
+                    color:$baby-blue;
+                    font-size: 15px;
+                }
+                &__route{
+                    font-size: 20px;
+                    color: $teal;
+                    font-weight: bold;
+                    margin-left: 5px;
+                    cursor: pointer;
+                }
+            }
+
+           
+        }
+    }
+    
+ }
+
+.submit-btn{
+    //position: relative;
+    // top: 5%;
+    background-color: transparent;
+    cursor: pointer;
+    display: inline-block;
+    background-image: url("../../../../src/assets/ticket/smallarrow.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    // width: 37px;
+    min-width: 37px;
+    height: 40px;
+    border: none;
+    margin-left: 5%;
+}
+.submit-btn-disabled{
+    //position: relative;
+    // top: 5%;
+    background-color: transparent;
+    opacity: 0.3;
+    display: inline-block;
+    background-image: url("../../../../src/assets/ticket/smallarrow.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 37px;
+    height: 40px;
+    //argin-top: 5%;
+    border: none;
+    margin-left: 5%;
+}
+
+.full-width {
+    width: 83%;
+    margin-bottom: 20px;
+} 
+.phone-width{
+    width: 73%;
+    margin-bottom: 20px;
+}
+.half-width{
+    width: 39%;
+    margin-bottom: 20px;
+}
+.m-r{
+    margin-right: 5%;
+}
+ 

@@ -1,0 +1,32 @@
+// .admin-container {
+//   position: relative;
+//   // width: 100vw;
+//   // display: grid;
+//   // justify-content: start;
+//     // grid-template-areas:
+//     // 'menu main'
+//     // 'menu main'
+//     // 'menu main';
+//   &.sideNav {
+//     // grid-area: menu;
+//   }
+//   .admin-content {
+//     position: absolute;
+//     top: 1%;
+//     left: 17%;
+//     z-index: 3;
+//   }
+// }
+mat-sidenav-container, mat-sidenav-content{
+  height: 100vh;
+}
+
+mat-sidenav{
+  background-color: #173E43;
+  width: 17%;
+}
+
+.nav-caption{
+  display: inline-block;
+  padding-left: 1rem;
+}

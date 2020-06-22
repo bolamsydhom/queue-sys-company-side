@@ -1,0 +1,140 @@
+<!-- <p>register works!</p>
+<button mat-raised-button
+        color="primary">Register</button> -->
+
+<section class="background">
+</section>
+<section class="section">
+  <div class="body">
+    <div class="body__logo"></div>
+    <div class="body__form">
+
+      <h2 class="body__form__title">Register</h2>
+
+
+      <form [formGroup]="accountDetailsForm"
+            novalidate
+            (ngSubmit)="onSubmitAccountDetails(accountDetailsForm.value)">
+
+
+        <mat-form-field class="half-width m-r">
+          <input matInput
+                 maxlength="10"
+                 placeholder="First name"
+                 formControlName="firstname"
+                 required>
+          <mat-error *ngFor="let validation of account_validation_messages.firstname">
+            <mat-error class="error-message"
+                       *ngIf="accountDetailsForm.get('firstname').hasError(validation.type) && (accountDetailsForm.get('firstname').dirty || accountDetailsForm.get('firstname').touched)">
+              {{validation.message}}</mat-error>
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field class="half-width">
+          <input matInput
+                 maxlength="10"
+                 placeholder="Last name"
+                 formControlName="lastname"
+                 required>
+          <mat-error *ngFor="let validation of account_validation_messages.lastname">
+            <mat-error class="error-message"
+                       *ngIf="accountDetailsForm.get('lastname').hasError(validation.type) && (accountDetailsForm.get('lastname').dirty || accountDetailsForm.get('lastname').touched)">
+              {{validation.message}}</mat-error>
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="full-width">
+          <input matInput
+                 type="email"
+                 placeholder="Email"
+                 formControlName="email"
+                 required>
+          <mat-error *ngFor="let validation of account_validation_messages.email">
+            <mat-error class="error-message"
+                       *ngIf="accountDetailsForm.get('email').hasError(validation.type) && (accountDetailsForm.get('email').dirty || accountDetailsForm.get('email').touched)">
+              {{validation.message}}</mat-error>
+          </mat-error>
+        </mat-form-field>
+
+
+        <div formGroupName="matching_passwords">
+          <mat-form-field class="full-width"
+                          class="half-width m-r">
+            <input matInput
+                   type="password"
+                   placeholder="Password"
+                   formControlName="password"
+                   required>
+            <mat-error *ngFor="let validation of account_validation_messages.password">
+              <mat-error class="error-message"
+                         *ngIf="accountDetailsForm.get('matching_passwords').get('password').hasError(validation.type) && (accountDetailsForm.get('matching_passwords').get('password').dirty || accountDetailsForm.get('matching_passwords').get('password').touched)">
+                {{validation.message}}</mat-error>
+            </mat-error>
+          </mat-form-field>
+
+          <mat-form-field class="full-width"
+                          class="half-width">
+            <input matInput
+                   type="password"
+                   placeholder="Confirm Password"
+                   formControlName="confirm_password"
+                   [errorStateMatcher]="parentErrorStateMatcher"
+                   required>
+            <mat-error *ngFor="let validation of account_validation_messages.confirm_password">
+              <mat-error class="error-message"
+                         *ngIf="(accountDetailsForm.get('matching_passwords').get('confirm_password').hasError(validation.type)|| accountDetailsForm.get('matching_passwords').hasError(validation.type)) && (accountDetailsForm.get('matching_passwords').get('confirm_password').dirty || accountDetailsForm.get('matching_passwords').get('confirm_password').touched)">
+                {{validation.message}}</mat-error>
+            </mat-error>
+          </mat-form-field>
+
+        </div>
+        <span>
+          <div class="eg-logo"></div>
+          <!-- <span class="eg-logo"></span> -->
+          <span class="eg-postalcode">+20</span>
+          <span formGroupName="country_phone">
+            <mat-form-field class="phone-width ">
+              <input matInput
+                     type="tel"
+                     placeholder="Phone number"
+                     formControlName="phone"
+                     required>
+              <mat-hint align="start"><strong>Mobile:</strong>
+                {{ accountDetailsForm.value.country_phone.country.sampleMobilePhone }}
+              </mat-hint>
+              <mat-hint align="end"><strong>Fixed:</strong>
+                {{ accountDetailsForm.value.country_phone.country.sampleFixedPhone }}
+              </mat-hint>
+              <mat-error *ngFor="let validation of account_validation_messages.phone">
+                <mat-error class="error-message"
+                           class="error-message"
+                           *ngIf="accountDetailsForm.get('country_phone').get('phone').hasError(validation.type) && (accountDetailsForm.get('country_phone').get('phone').dirty || accountDetailsForm.get('country_phone').get('phone').touched)">
+                  {{ validation.message }}
+                </mat-error>
+              </mat-error>
+            </mat-form-field>
+          </span>
+
+
+        </span>
+        <span class="btn-container">
+          <!-- <span color="primary" mat-raised-button
+                                                (click)="onSubmitAccountDetails(accountDetailsForm.value)" type="submit"
+                                                [ngClass]="!accountDetailsForm.valid ?'submit-btn-disabled' :'submit-btn'">
+                                                <button class="no-display"></button>
+                                        </span> -->
+          <button type="submit"
+                  color="primary"
+                  [disabled]="!accountDetailsForm.valid"
+                  [ngClass]="!accountDetailsForm.valid ?'submit-btn-disabled' :'submit-btn'"></button>
+        </span>
+      </form>
+      <div class="route-section">
+        <span class="route-section__title">Already with us? </span>
+        <a (click)="goToLogin()"
+           class="route-section__route"> LOGIN!</a>
+      </div>
+
+    </div>
+  </div>
+
+</section>

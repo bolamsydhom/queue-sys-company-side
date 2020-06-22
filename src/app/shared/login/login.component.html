@@ -1,0 +1,77 @@
+<section class="upper-bk">
+  <div class="first-layer"></div>
+  <div class="second-layer"></div>
+  <div class="third-layer"></div>
+</section>
+<section class="login">
+  <div class="login__area">
+    <div class="login__area__logo"></div>
+    <div class="login__area__form">
+      <h2 class="login__area__form__title">Login</h2>
+
+      <!-- Email Form -->
+      <span *ngIf="currentInput==='email'">
+        <form [formGroup]="emailForm" novalidate (ngSubmit)="onEmailLogin(emailForm.value)">
+
+          <mat-form-field class="full-width m-r">
+            <input matInput placeholder="Email" #email formControlName="email" required>
+
+            <mat-error *ngFor="let validation of account_validation_messages.email">
+              <mat-error class="error-message"
+                *ngIf="emailForm.get('email').hasError(validation.type) && (emailForm.get('email').dirty || emailForm.get('email').touched)">
+                {{validation.message}}</mat-error>
+
+            </mat-error>
+
+          </mat-form-field>
+
+          <span class="btn-container">
+
+            <button type="submit" color="primary"
+              [ngClass]="((emailForm.get('email').hasError('required')|| emailForm.get('email').hasError('pattern')) 
+           &&(emailForm.get('email').dirty || emailForm.get('email').touched))||backendError ? 'submit-btn-error': 'submit-btn'" [disabled]="((emailForm.get('email').hasError('required')|| emailForm.get('email').hasError('pattern')) 
+              && (emailForm.get('email').dirty || emailForm.get('email').touched))"></button>
+          </span>
+          <mat-error class="matError" *ngIf="backendError">
+            ay 7aga
+          </mat-error>
+
+        </form>
+      </span>
+
+      <!-- Password Form -->
+      <span *ngIf="currentInput==='password'">
+        <form [formGroup]="passwordForm" novalidate (ngSubmit)="onLogin(passwordForm.value)">
+
+          <mat-form-field class="full-width m-r">
+            <input #password matInput placeholder="Password" formControlName="password" required type="password">
+            <mat-error *ngFor="let validation of account_validation_messages.password">
+              <mat-error class="error-message"
+                *ngIf="passwordForm.get('password').hasError(validation.type) && (passwordForm.get('password').dirty || passwordForm.get('password').touched)">
+                {{validation.message}}</mat-error>
+            </mat-error>
+          </mat-form-field>
+          <span class="btn-container">
+
+            <button type="submit" color="primary"
+              [ngClass]="(
+              (passwordForm.get('password').hasError('required')|| passwordForm.get('password').hasError('pattern')|| passwordForm.get('password').hasError('minlength')) 
+              && (passwordForm.get('password').dirty || passwordForm.get('password').touched)) ? 'submit-btn-error': 'final-btn'" [disabled]="(
+                (passwordForm.get('password').hasError('required')|| passwordForm.get('password').hasError('pattern')|| passwordForm.get('password').hasError('minlength')) 
+              && (passwordForm.get('password').dirty || passwordForm.get('password').touched))"></button>
+          </span>
+
+        </form>
+      </span>
+
+      <div class="route-section">
+        <span class="route-section__title">still waiting in the Queue? </span>
+        <a class="route-section__route" (click)="goToRegister()"> Get instant free accesses NOW!</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+<section class="lower-bk">
+
+</section>

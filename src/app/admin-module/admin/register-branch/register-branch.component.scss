@@ -1,0 +1,60 @@
+.register-branch-container {
+  position: relative;
+  height: 100vh;
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  overflow-y: hidden;
+  width: 100vw;
+  h2 {
+    margin-top: 7%;
+    justify-self: center;
+    font-size: 1.4rem;
+    color: #173e43;
+    font-weight: 700;
+  }
+}
+
+.mat-stepper-horizontal {
+  margin-top: 8px;
+}
+
+.mat-form-field {
+  margin-top: 16px;
+  width: 100%;
+}
+
+h3 {
+  margin-top: 3%;
+  font-size: 1.2rem;
+  color: #173e43;
+}
+.table-container {
+  height: 160px;
+  overflow: auto;
+}
+mat-select {
+  margin-right: 1rem;
+}
+
+.circle-bg {
+  position: absolute;
+  // transform: scale(0.1);
+  z-index: -1;
+  background-image: url(../../../../assets/images/reg-bk.png);
+  background-size: cover;
+  height: 744px;
+  width: 744px;
+  transform: translate(50%, 70%);
+  background-position-y: bottom;
+  overflow: hidden;
+  img {
+    height: 744px;
+    width: 744px;
+  }
+}
+mat-chip{
+  cursor: pointer;
+}
+
+

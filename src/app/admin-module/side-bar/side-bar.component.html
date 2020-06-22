@@ -1,0 +1,68 @@
+<!-- <mat-sidenav-container class="side-bar example-container">
+  <mat-sidenav mode="side" opened class="side-bar">
+    <div class="side-nav-logo">
+      <img src="../../../assets/images/Group 1.png" alt="" srcset="">
+    </div>
+
+  <mat-tree [dataSource]="dataSource"  [treeControl]="treeControl">
+
+    <mat-tree-node *matTreeNodeDef="let node" matTreeNodePadding>
+
+      <button mat-icon-button disabled></button>
+      {{node.name}}
+    </mat-tree-node>
+
+    <mat-tree-node *matTreeNodeDef="let node;when: hasChild"  matTreeNodePadding>
+      <button mat-icon-button
+              matTreeNodeToggle
+              [attr.aria-label]="'toggle ' + node.name">
+        <mat-icon class="mat-icon-rtl-mirror">
+          {{treeControl.isExpanded(node) ? 'expand_more' : 'chevron_right'}}
+        </mat-icon>
+      </button>
+      {{node.name}}
+    </mat-tree-node>
+  </mat-tree>
+
+  </mat-sidenav>
+  <mat-sidenav-content>{{content}}</mat-sidenav-content>
+</mat-sidenav-container> -->
+    <mat-nav-list>
+
+        <div class="side-nav-logo">
+          <img src="../../../assets/images/Group 1.png"
+               alt=""
+               srcset="">
+        </div>
+      <!-- <mat-divider></mat-divider> -->
+
+
+      <a mat-list-item>
+        <mat-icon> pie_chart</mat-icon> <span class="nav-caption"> Chart </span>
+      </a>
+      <a class="nested" mat-list-item
+         routerLink="/chart">
+        <mat-icon> av_timer </mat-icon> <span class="nav-caption"> Real Time </span>
+      </a>
+      <a class="nested" mat-list-item
+         routerLink="/chart">
+        <mat-icon> center_focus_strong </mat-icon> <span class="nav-caption"> custome charts </span>
+      </a>
+       <a class="nested" mat-list-item
+          routerLink="/chart">
+         <mat-icon> stars</mat-icon> <span class="nav-caption"> performance </span>
+       </a>
+      <mat-divider></mat-divider>
+      <a mat-list-item
+         routerLink="/chart">
+        <mat-icon>people</mat-icon> <span class="nav-caption"> Managde Users </span>
+      </a>
+      <a mat-list-item
+         routerLink="/chart">
+        <mat-icon>error</mat-icon> <span class="nav-caption"> Outage </span>
+      </a>
+      <a mat-list-item
+         routerLink="/chart">
+        <mat-icon>settings</mat-icon> <span class="nav-caption"> Settings </span>
+      </a>
+    </mat-nav-list>
